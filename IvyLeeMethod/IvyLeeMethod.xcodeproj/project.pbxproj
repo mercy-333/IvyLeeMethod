@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21832F6AA11571819C75AACD /* Pods_IvyLeeMethod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E1ABB46BCD3E92A8CED998 /* Pods_IvyLeeMethod.framework */; };
 		483B291B25BD5294003796DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B291A25BD5294003796DD /* AppDelegate.swift */; };
 		483B291D25BD5294003796DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B291C25BD5294003796DD /* SceneDelegate.swift */; };
 		483B291F25BD5294003796DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B291E25BD5294003796DD /* ViewController.swift */; };
@@ -15,6 +16,8 @@
 		483B292725BD5297003796DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483B292525BD5297003796DD /* LaunchScreen.storyboard */; };
 		483B293225BD5297003796DD /* IvyLeeMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B293125BD5297003796DD /* IvyLeeMethodTests.swift */; };
 		483B293D25BD5297003796DD /* IvyLeeMethodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B293C25BD5297003796DD /* IvyLeeMethodUITests.swift */; };
+		7AE22CFAADCD18F1EAFF925F /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 673F617B72BF163402E87A86 /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework */; };
+		F48B57020E24E57578F42DF7 /* Pods_IvyLeeMethodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE161934D6A72884C30D2C24 /* Pods_IvyLeeMethodTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B3B1903EDB998BB62B8608 /* Pods-IvyLeeMethod-IvyLeeMethodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethod-IvyLeeMethodUITests.debug.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethod-IvyLeeMethodUITests/Pods-IvyLeeMethod-IvyLeeMethodUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		483B291725BD5294003796DD /* IvyLeeMethod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IvyLeeMethod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483B291A25BD5294003796DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483B291C25BD5294003796DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		483B293825BD5297003796DD /* IvyLeeMethodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IvyLeeMethodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		483B293C25BD5297003796DD /* IvyLeeMethodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvyLeeMethodUITests.swift; sourceTree = "<group>"; };
 		483B293E25BD5297003796DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDB47ACF4D71A95BC6E8C99 /* Pods-IvyLeeMethod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethod.release.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethod/Pods-IvyLeeMethod.release.xcconfig"; sourceTree = "<group>"; };
+		5FB950E9BFA4ED1704C78156 /* Pods-IvyLeeMethodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethodTests.release.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethodTests/Pods-IvyLeeMethodTests.release.xcconfig"; sourceTree = "<group>"; };
+		673F617B72BF163402E87A86 /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IvyLeeMethod_IvyLeeMethodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6813652DE05CDC91A71C9894 /* Pods-IvyLeeMethod-IvyLeeMethodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethod-IvyLeeMethodUITests.release.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethod-IvyLeeMethodUITests/Pods-IvyLeeMethod-IvyLeeMethodUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BFE2BBF7A0E9AC5FE10D332E /* Pods-IvyLeeMethodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethodTests.debug.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethodTests/Pods-IvyLeeMethodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3E1ABB46BCD3E92A8CED998 /* Pods_IvyLeeMethod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IvyLeeMethod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56C94763E4B2D2F3A8EC028 /* Pods-IvyLeeMethod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethod.debug.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethod/Pods-IvyLeeMethod.debug.xcconfig"; sourceTree = "<group>"; };
+		DE161934D6A72884C30D2C24 /* Pods_IvyLeeMethodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IvyLeeMethodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21832F6AA11571819C75AACD /* Pods_IvyLeeMethod.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48B57020E24E57578F42DF7 /* Pods_IvyLeeMethodTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE22CFAADCD18F1EAFF925F /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				483B293025BD5297003796DD /* IvyLeeMethodTests */,
 				483B293B25BD5297003796DD /* IvyLeeMethodUITests */,
 				483B291825BD5294003796DD /* Products */,
+				553C0C3745F4C31114DE505B /* Pods */,
+				C094CD03D0FDB46E25866573 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +116,9 @@
 		483B291925BD5294003796DD /* IvyLeeMethod */ = {
 			isa = PBXGroup;
 			children = (
-				483B291A25BD5294003796DD /* AppDelegate.swift */,
-				483B291C25BD5294003796DD /* SceneDelegate.swift */,
-				483B291E25BD5294003796DD /* ViewController.swift */,
-				483B292025BD5294003796DD /* Main.storyboard */,
-				483B292325BD5297003796DD /* Assets.xcassets */,
-				483B292525BD5297003796DD /* LaunchScreen.storyboard */,
+				483B296525BD58EF003796DD /* View */,
+				483B296425BD58EA003796DD /* Model */,
+				483B296325BD58DB003796DD /* Controller */,
 				483B292825BD5297003796DD /* Info.plist */,
 			);
 			path = IvyLeeMethod;
@@ -128,6 +142,56 @@
 			path = IvyLeeMethodUITests;
 			sourceTree = "<group>";
 		};
+		483B296325BD58DB003796DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				483B291A25BD5294003796DD /* AppDelegate.swift */,
+				483B291E25BD5294003796DD /* ViewController.swift */,
+				483B291C25BD5294003796DD /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		483B296425BD58EA003796DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		483B296525BD58EF003796DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				483B292325BD5297003796DD /* Assets.xcassets */,
+				483B292025BD5294003796DD /* Main.storyboard */,
+				483B292525BD5297003796DD /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		553C0C3745F4C31114DE505B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D56C94763E4B2D2F3A8EC028 /* Pods-IvyLeeMethod.debug.xcconfig */,
+				5DDB47ACF4D71A95BC6E8C99 /* Pods-IvyLeeMethod.release.xcconfig */,
+				01B3B1903EDB998BB62B8608 /* Pods-IvyLeeMethod-IvyLeeMethodUITests.debug.xcconfig */,
+				6813652DE05CDC91A71C9894 /* Pods-IvyLeeMethod-IvyLeeMethodUITests.release.xcconfig */,
+				BFE2BBF7A0E9AC5FE10D332E /* Pods-IvyLeeMethodTests.debug.xcconfig */,
+				5FB950E9BFA4ED1704C78156 /* Pods-IvyLeeMethodTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C094CD03D0FDB46E25866573 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1ABB46BCD3E92A8CED998 /* Pods_IvyLeeMethod.framework */,
+				673F617B72BF163402E87A86 /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework */,
+				DE161934D6A72884C30D2C24 /* Pods_IvyLeeMethodTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 483B294125BD5298003796DD /* Build configuration list for PBXNativeTarget "IvyLeeMethod" */;
 			buildPhases = (
+				6FD545AC1744FF2E4CC73C5B /* [CP] Check Pods Manifest.lock */,
 				483B291325BD5294003796DD /* Sources */,
 				483B291425BD5294003796DD /* Frameworks */,
 				483B291525BD5294003796DD /* Resources */,
+				77A26F843444CF5E4D97A96B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 483B294425BD5298003796DD /* Build configuration list for PBXNativeTarget "IvyLeeMethodTests" */;
 			buildPhases = (
+				5AFAD6AAA4EDF345CCF33A14 /* [CP] Check Pods Manifest.lock */,
 				483B292925BD5297003796DD /* Sources */,
 				483B292A25BD5297003796DD /* Frameworks */,
 				483B292B25BD5297003796DD /* Resources */,
@@ -170,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 483B294725BD5298003796DD /* Build configuration list for PBXNativeTarget "IvyLeeMethodUITests" */;
 			buildPhases = (
+				B591FBF95D2588BCDA2F7BAD /* [CP] Check Pods Manifest.lock */,
 				483B293425BD5297003796DD /* Sources */,
 				483B293525BD5297003796DD /* Frameworks */,
 				483B293625BD5297003796DD /* Resources */,
+				CCA818D5E0CB17AA4B37A7A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +321,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AFAD6AAA4EDF345CCF33A14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IvyLeeMethodTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FD545AC1744FF2E4CC73C5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IvyLeeMethod-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77A26F843444CF5E4D97A96B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IvyLeeMethod/Pods-IvyLeeMethod-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IvyLeeMethod/Pods-IvyLeeMethod-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IvyLeeMethod/Pods-IvyLeeMethod-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B591FBF95D2588BCDA2F7BAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IvyLeeMethod-IvyLeeMethodUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCA818D5E0CB17AA4B37A7A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IvyLeeMethod-IvyLeeMethodUITests/Pods-IvyLeeMethod-IvyLeeMethodUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IvyLeeMethod-IvyLeeMethodUITests/Pods-IvyLeeMethod-IvyLeeMethodUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IvyLeeMethod-IvyLeeMethodUITests/Pods-IvyLeeMethod-IvyLeeMethodUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		483B291325BD5294003796DD /* Sources */ = {
@@ -433,6 +605,7 @@
 		};
 		483B294225BD5298003796DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D56C94763E4B2D2F3A8EC028 /* Pods-IvyLeeMethod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +625,7 @@
 		};
 		483B294325BD5298003796DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDB47ACF4D71A95BC6E8C99 /* Pods-IvyLeeMethod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +645,7 @@
 		};
 		483B294525BD5298003796DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFE2BBF7A0E9AC5FE10D332E /* Pods-IvyLeeMethodTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +668,7 @@
 		};
 		483B294625BD5298003796DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FB950E9BFA4ED1704C78156 /* Pods-IvyLeeMethodTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +691,7 @@
 		};
 		483B294825BD5298003796DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B3B1903EDB998BB62B8608 /* Pods-IvyLeeMethod-IvyLeeMethodUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +712,7 @@
 		};
 		483B294925BD5298003796DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6813652DE05CDC91A71C9894 /* Pods-IvyLeeMethod-IvyLeeMethodUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
