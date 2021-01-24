@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class TodoModel: Object {
+class DataBase: Object {
     @objc dynamic var date = "" //日付    String    yyyymmmdd    主キー
     @objc dynamic var task1 = "" //タスク1の内容    String    〇〇する
     @objc dynamic var task2 = "" //タスク2の内容    String    〇〇する
@@ -30,7 +30,7 @@ class TodoModel: Object {
     }
 }
 
-class DataBase {
+class Common {
     
     let Log = Logger()
     
