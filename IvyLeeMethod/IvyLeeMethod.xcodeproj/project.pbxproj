@@ -10,12 +10,14 @@
 		21832F6AA11571819C75AACD /* Pods_IvyLeeMethod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E1ABB46BCD3E92A8CED998 /* Pods_IvyLeeMethod.framework */; };
 		483B291B25BD5294003796DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B291A25BD5294003796DD /* AppDelegate.swift */; };
 		483B291D25BD5294003796DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B291C25BD5294003796DD /* SceneDelegate.swift */; };
-		483B291F25BD5294003796DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B291E25BD5294003796DD /* ViewController.swift */; };
 		483B292225BD5294003796DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483B292025BD5294003796DD /* Main.storyboard */; };
 		483B292425BD5297003796DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 483B292325BD5297003796DD /* Assets.xcassets */; };
 		483B292725BD5297003796DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483B292525BD5297003796DD /* LaunchScreen.storyboard */; };
 		483B293225BD5297003796DD /* IvyLeeMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B293125BD5297003796DD /* IvyLeeMethodTests.swift */; };
 		483B293D25BD5297003796DD /* IvyLeeMethodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B293C25BD5297003796DD /* IvyLeeMethodUITests.swift */; };
+		483B297825BD63FE003796DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B297725BD63FE003796DD /* MainViewController.swift */; };
+		483B298B25BD6579003796DD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B298A25BD6579003796DD /* Logger.swift */; };
+		483B299325BD750B003796DD /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B299225BD750B003796DD /* DataBase.swift */; };
 		7AE22CFAADCD18F1EAFF925F /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 673F617B72BF163402E87A86 /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework */; };
 		F48B57020E24E57578F42DF7 /* Pods_IvyLeeMethodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE161934D6A72884C30D2C24 /* Pods_IvyLeeMethodTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,7 +44,6 @@
 		483B291725BD5294003796DD /* IvyLeeMethod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IvyLeeMethod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483B291A25BD5294003796DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483B291C25BD5294003796DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		483B291E25BD5294003796DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		483B292125BD5294003796DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		483B292325BD5297003796DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		483B292625BD5297003796DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +54,9 @@
 		483B293825BD5297003796DD /* IvyLeeMethodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IvyLeeMethodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		483B293C25BD5297003796DD /* IvyLeeMethodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvyLeeMethodUITests.swift; sourceTree = "<group>"; };
 		483B293E25BD5297003796DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		483B297725BD63FE003796DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		483B298A25BD6579003796DD /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		483B299225BD750B003796DD /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		5DDB47ACF4D71A95BC6E8C99 /* Pods-IvyLeeMethod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethod.release.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethod/Pods-IvyLeeMethod.release.xcconfig"; sourceTree = "<group>"; };
 		5FB950E9BFA4ED1704C78156 /* Pods-IvyLeeMethodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvyLeeMethodTests.release.xcconfig"; path = "Target Support Files/Pods-IvyLeeMethodTests/Pods-IvyLeeMethodTests.release.xcconfig"; sourceTree = "<group>"; };
 		673F617B72BF163402E87A86 /* Pods_IvyLeeMethod_IvyLeeMethodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IvyLeeMethod_IvyLeeMethodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				483B291A25BD5294003796DD /* AppDelegate.swift */,
-				483B291E25BD5294003796DD /* ViewController.swift */,
 				483B291C25BD5294003796DD /* SceneDelegate.swift */,
+				483B297725BD63FE003796DD /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,6 +159,8 @@
 		483B296425BD58EA003796DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				483B298A25BD6579003796DD /* Logger.swift */,
+				483B299225BD750B003796DD /* DataBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,9 +436,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				483B291F25BD5294003796DD /* ViewController.swift in Sources */,
+				483B299325BD750B003796DD /* DataBase.swift in Sources */,
 				483B291B25BD5294003796DD /* AppDelegate.swift in Sources */,
 				483B291D25BD5294003796DD /* SceneDelegate.swift in Sources */,
+				483B297825BD63FE003796DD /* MainViewController.swift in Sources */,
+				483B298B25BD6579003796DD /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
