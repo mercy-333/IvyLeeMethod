@@ -43,16 +43,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if (db.isRealmData(currentDate)) {
             // 現在日付のRealmデータが存在している場合はデータを取得
             let todayRealmData:DataBase = db.getRealmData(currentDate) as! DataBase
-            
             setCurrentData(todayRealmData)
             
-            /*
-            for i in 0..<todayRealmData.missionInfoList.count {
-                missionList.insert(todayRealmData.missionInfoList[i].title, at: self.missionList.endIndex)
-                isCheckList.insert(todayRealmData.missionInfoList[i].isCheck, at: isCheckList.endIndex)
-            }
-            realmCount = todayRealmData.missionInfoList.count
-             */
         } else {
             // Realmデータ生成
             db.createRealmData(currentDate)
@@ -80,15 +72,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = taskTable.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath)
         
         // ミッション内容をカスタムセルの Label(tag2)に設定
-        let cellLabel = cell.viewWithTag(2) as! UILabel
-        cellLabel.text = missionList[indexPath.row]
+        let cellLabel = cell.viewWithTag(3) as! UILabel
+        cellLabel.text = currentTask[indexPath.row]
         
         // カスタムセルのボタン(tag1)をunCkeckMarkに設定
-        if (cell.viewWithTag(1) as? UIButton) != nil {
-            let cellButton = cell.viewWithTag(1) as! UIButton
+        if (cell.viewWithTag(2) as? UIButton) != nil {
+            let cellButton = cell.viewWithTag(2) as! UIButton
 
             // true/falseで画像切り替え
-            if (isCheckList[indexPath.row] == true) {
+            if (currentTaskFlg[indexPath.row] == true) {
                 cellButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
             } else {
                 cellButton.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -96,7 +88,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             // カスタムセルのボタンをタップした時にcallするメソッドを設定
             // * チェック/アンチェックを切り替える
-            cellButton.addTarget(self, action: #selector(checkButton(_:)), for: .touchUpInside)
+            //cellButton.addTarget(self, action: #selector(checkButton(_:)), for: .touchUpInside)
 
         } else {
             log.errorLog("cell.viewWithTag(1) is nil.")
