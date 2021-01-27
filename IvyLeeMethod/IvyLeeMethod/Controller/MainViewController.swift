@@ -18,42 +18,33 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var taskTable: UITableView!
     
     let log = Logger()
-    let db = Common()
-
-    /// 現在の日付
-    var currentDate = ""
+    let db  = Common()
     
-    /// 現在のタスク内容
-    var currentTask = [String]()
-    
-    /// 現在のタスク状態
-    var currentTaskFlg = [Bool]()
-    
+    var currentDate = ""          /// 現在の日付
+    var currentTask = [String]()  /// 現在のタスク内容
+    var currentTaskFlg = [Bool]() /// 現在のタスク状態
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        log.debugLog("#############################")
-        log.debugLog("##### APPLICATION START #####")
-        log.debugLog("#############################")
+        log.debugLog("#####################")
+        log.debugLog("# APPLICATION START #")
+        log.debugLog("#####################")
+        
+        taskTable.delegate = self
+        taskTable.dataSource = self
         
         currentDate = db.getTodayDate()
         dateLabel.text = currentDate
         
-        // Realmインスタンス生成
+        // 現在日付のRealmデータを取得 / 無かったら生成
         if (db.isRealmData(currentDate)) {
-            // 現在日付のRealmデータが存在している場合はデータを取得
-            let todayRealmData:DataBase = db.getRealmData(currentDate) as! DataBase
-            setCurrentData(todayRealmData)
-            
+            setCurrentData(db.getRealmData(currentDate) as! DataBase)
         } else {
-            // Realmデータ生成
             db.createRealmData(currentDate)
         }
-        
     }
     
     /// TableViewの行数 6行固定
-    /// セル生成時に呼び出される
     /// - Parameters:
     ///   - tableView: <#tableView description#>
     ///   - section: <#section description#>
@@ -71,52 +62,52 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // セルの取得(再利用)
         let cell = taskTable.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath)
         
-        // ミッション内容をカスタムセルの Label(tag2)に設定
-        let cellLabel = cell.viewWithTag(3) as! UILabel
-        cellLabel.text = currentTask[indexPath.row]
+        // [1] タスク番号をラベルに設定
+        let cTaskNum = cell.viewWithTag(1) as! UILabel
+        cTaskNum.text = (indexPath.row + 1).description
         
-        // カスタムセルのボタン(tag1)をunCkeckMarkに設定
-        if (cell.viewWithTag(2) as? UIButton) != nil {
-            let cellButton = cell.viewWithTag(2) as! UIButton
-
-            // true/falseで画像切り替え
-            if (currentTaskFlg[indexPath.row] == true) {
-                cellButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
-            } else {
-                cellButton.setImage(UIImage(systemName: "circle"), for: .normal)
-            }
-                
-            // カスタムセルのボタンをタップした時にcallするメソッドを設定
-            // * チェック/アンチェックを切り替える
-            //cellButton.addTarget(self, action: #selector(checkButton(_:)), for: .touchUpInside)
-
+        // [2] ボタンの画像(チェック/アンチェック)を設定
+        let cButton = cell.viewWithTag(2) as! UIButton
+        if (currentTaskFlg[indexPath.row] == true) {
+            cButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
         } else {
-            log.errorLog("cell.viewWithTag(1) is nil.")
+            cButton.setImage(UIImage(systemName: "circle"), for: .normal)
         }
+            
+        // カスタムセルのボタンをタップした時にcallするメソッドを設定
+        // * チェック/アンチェックを切り替える
+        //cellButton.addTarget(self, action: #selector(checkButton(_:)), for: .touchUpInside)
+        
+        // [3] タスク内容をTextFieldに設定
+        let cTask = cell.viewWithTag(3) as! UILabel
+        cTask.text = currentTask[indexPath.row]
+        
         return cell
     }
     
-    /// Realmデータを現在の情報に設定
-    /// + currentDate
-    /// +
-    /// - Parameter data: <#data description#>
+    /// Realmデータを読み込み 現在情報に設定
+    /// * currentDate
+    /// * currentTask
+    /// * currentTaskFlg
+    ///
+    /// - Parameter data: 読み込むRealmデータ
     func setCurrentData(_ realmData:DataBase) {
-        
+        log.debugLog("RealmData is loading.")
+
         currentDate = realmData.date
         
-        currentTask[0] = realmData.task1
-        currentTask[1] = realmData.task2
-        currentTask[2] = realmData.task3
-        currentTask[3] = realmData.task4
-        currentTask[4] = realmData.task5
-        currentTask[5] = realmData.task6
+        currentTask.insert(realmData.task1, at: currentTask.endIndex)
+        currentTask.insert(realmData.task2, at: currentTask.endIndex)
+        currentTask.insert(realmData.task3, at: currentTask.endIndex)
+        currentTask.insert(realmData.task4, at: currentTask.endIndex)
+        currentTask.insert(realmData.task5, at: currentTask.endIndex)
+        currentTask.insert(realmData.task6, at: currentTask.endIndex)
 
-        currentTaskFlg[0] = realmData.taskFlg1
-        currentTaskFlg[1] = realmData.taskFlg2
-        currentTaskFlg[2] = realmData.taskFlg3
-        currentTaskFlg[3] = realmData.taskFlg4
-        currentTaskFlg[4] = realmData.taskFlg5
-        currentTaskFlg[5] = realmData.taskFlg6
-
+        currentTaskFlg.insert(realmData.taskFlg1, at: currentTaskFlg.endIndex)
+        currentTaskFlg.insert(realmData.taskFlg2, at: currentTaskFlg.endIndex)
+        currentTaskFlg.insert(realmData.taskFlg3, at: currentTaskFlg.endIndex)
+        currentTaskFlg.insert(realmData.taskFlg4, at: currentTaskFlg.endIndex)
+        currentTaskFlg.insert(realmData.taskFlg5, at: currentTaskFlg.endIndex)
+        currentTaskFlg.insert(realmData.taskFlg6, at: currentTaskFlg.endIndex)
     }
 }
