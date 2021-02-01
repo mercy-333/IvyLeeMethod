@@ -80,10 +80,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             cButton.setImage(UIImage(systemName: "circle"), for: .normal)
         }
-            
-        // カスタムセルのボタンをタップした時にcallするメソッドを設定
-        // * チェック/アンチェックを切り替える
-        //cellButton.addTarget(self, action: #selector(checkButton(_:)), for: .touchUpInside)
+        cButton.addTarget(self, action: #selector(checkButton(_:)), for: .touchUpInside)
         
         // [3] タスク内容をTextViewに設定
         let cTask = cell.viewWithTag(3) as! UITextView
@@ -107,6 +104,28 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cTask.inputAccessoryView = toolBar
         
         return cell
+    }
+    
+    // カスタムセル内のチェックボックスをタップ
+    // チェックボックス画像を切り替える
+    @objc func checkButton(_ sender:UIButton) {
+        let buttonPosition = sender.convert(CGPoint(), to: self.taskTable)
+        if let getIndexPath = self.taskTable.indexPathForRow(at:buttonPosition) {
+            let taskNum = getIndexPath.row + 1
+            
+            // [true]->[false]
+            if (currentTaskFlg[taskNum-1]) {
+                sender.setImage(UIImage(systemName: "circle"), for: .normal)
+                (currentTaskFlg[taskNum-1]) = false
+                db.writeRealmTaskFlg(currentDate, taskNum, false)
+            
+            // [false]->[true]
+            } else {
+                sender.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+                (currentTaskFlg[taskNum-1]) = true
+                db.writeRealmTaskFlg(currentDate, taskNum, true)
+            }
+        }
     }
     
     /// Doneボタン押下時の処理 TextView編集を終了する

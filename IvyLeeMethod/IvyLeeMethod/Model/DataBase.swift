@@ -112,31 +112,71 @@ class Common {
             log.errorLog("invalid date.")
         } else if (taskNum < 0 || 6 < taskNum) {
             log.errorLog("invalid task number.")
-        }
-        
-        do {
-            let realm =  try Realm()
-            let results = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first
-            try! realm.write {
-                switch taskNum {
-                    case 1:
-                        results?.task1 = text
-                    case 2:
-                        results?.task2 = text
-                    case 3:
-                        results?.task3 = text
-                    case 4:
-                        results?.task4 = text
-                    case 5:
-                        results?.task5 = text
-                    case 6:
-                        results?.task6 = text
-                    default:
-                        log.debugLog("[\(taskNum)] is invalid.")
+        } else {
+            do {
+                let realm =  try Realm()
+                let results = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first
+                try! realm.write {
+                    switch taskNum {
+                        case 1:
+                            results?.task1 = text
+                        case 2:
+                            results?.task2 = text
+                        case 3:
+                            results?.task3 = text
+                        case 4:
+                            results?.task4 = text
+                        case 5:
+                            results?.task5 = text
+                        case 6:
+                            results?.task6 = text
+                        default:
+                            log.debugLog("[\(taskNum)] is invalid.")
+                    }
                 }
+            } catch {
+                log.errorLog("write RealmData failed.")
             }
-        } catch {
-            log.errorLog("write RealmData failed.")
+        }
+    }
+    
+    /// タスク状態をRealmデータに書き込む
+    /// - Parameters:
+    ///   - dateStr: 日付 (ex)"20201231"
+    ///   - taskNum: タスク番号
+    ///   - state: タスク状態
+    func writeRealmTaskFlg(_ dateStr:String,_ taskNum:Int,_ state:Bool) {
+        log.debugLog("start. Date[\(dateStr)],TaskNum[\(taskNum)],State[\(state)]")
+        
+        if ( 8 != dateStr.utf16.count) {
+            log.errorLog("invalid date.")
+        } else if (taskNum < 0 || 6 < taskNum) {
+            log.errorLog("invalid task number.")
+        } else {
+            do {
+                let realm =  try Realm()
+                let results = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first
+                try! realm.write {
+                    switch taskNum {
+                        case 1:
+                            results?.taskFlg1 = state
+                        case 2:
+                            results?.taskFlg2 = state
+                        case 3:
+                            results?.taskFlg3 = state
+                        case 4:
+                            results?.taskFlg4 = state
+                        case 5:
+                            results?.taskFlg5 = state
+                        case 6:
+                            results?.taskFlg6 = state
+                        default:
+                            log.debugLog("[\(taskNum)] is invalid.")
+                    }
+                }
+            } catch {
+                log.errorLog("write RealmData failed.")
+            }
         }
     }
 }
