@@ -12,8 +12,7 @@ import CalculateCalendarLogic
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate  {
     
-    @IBOutlet weak var prevDay: UIButton!
-    @IBOutlet weak var nextDay: UIButton!
+
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var taskTable: UITableView!
     
@@ -28,24 +27,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         log.debugLog("#####################")
         log.debugLog("# APPLICATION START #")
         log.debugLog("#####################")
+        
         super.viewDidLoad()
         taskTable.delegate = self
         taskTable.dataSource = self
         taskTable.rowHeight = UITableView.automaticDimension
         taskTable.estimatedRowHeight = 10000
         
-
-        
         // 当日日付を設定
         currentDate = db.getTodayDate()
         dateLabel.text = currentDate
         
-        // 現在日付のRealmデータを取得 / 無かったら生成
-        if (db.isRealmData(currentDate)) {
-            setCurrentData(db.readRealmData(currentDate) as! DataBase)
-        } else {
-            db.createRealmData(currentDate)
-        }
+        loadData()
     }
     
     /// TableViewセル数 6行固定
@@ -99,8 +92,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         toolBar.barStyle = UIBarStyle.default
         toolBar.sizeToFit()
         let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
-        let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(commitButtonTapped))
-        toolBar.items = [spacer, commitButton]
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneButtonTapped))
+        toolBar.items = [spacer, doneButton]
         cTask.inputAccessoryView = toolBar
         
         return cell
@@ -129,7 +122,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     /// Doneボタン押下時の処理 TextView編集を終了する
-    @objc func commitButtonTapped() {
+    @objc func doneButtonTapped() {
         self.view.endEditing(true)
     }
     
@@ -185,4 +178,32 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         currentTaskFlg[4] = realmData.taskFlg5
         currentTaskFlg[5] = realmData.taskFlg6
     }
+    
+    /// 前日ボタン
+    /// currentDate"YYYYMMDD"の1日前に変更、Realmデータを読み込んで更新する
+    /// - Parameter sender:
+    @IBAction func prevDay(_ sender: Any) {
+        currentDate = db.getSelectDate(currentDate, changeDayNum: -1)
+        dateLabel.text = currentDate
+        loadData()
+    }
+    
+    /// 翌日ボタン
+    /// - Parameter sender:
+    @IBAction func nextDay(_ sender: Any) {
+        currentDate = db.getSelectDate(currentDate, changeDayNum: 1)
+        dateLabel.text = currentDate
+        loadData()
+    }
+        
+    /// 現在日付のRealmデータを取得してTableViewに反映 / 無かったら生成
+    func loadData() {
+        if (db.isRealmData(currentDate)) {
+            setCurrentData(db.readRealmData(currentDate) as! DataBase)
+        } else {
+            db.createRealmData(currentDate)
+        }
+        taskTable.reloadData()
+    }
+    
 }

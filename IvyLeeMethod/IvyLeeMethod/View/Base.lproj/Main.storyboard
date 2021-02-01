@@ -24,14 +24,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="5pf-n9-TQE">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5pf-n9-TQE" id="nRn-lx-byx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-a3-hvh" userLabel="[1]NumberLabel">
-                                                    <rect key="frame" x="10" y="10" width="20" height="44"/>
+                                                    <rect key="frame" x="10" y="10" width="20" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="XEn-sr-9u4"/>
                                                     </constraints>
@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-qh-MOl" userLabel="[2]CheckButton">
-                                                    <rect key="frame" x="35" y="10" width="40" height="44"/>
+                                                    <rect key="frame" x="35" y="10" width="40" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Nmj-xV-ZYr"/>
                                                     </constraints>
@@ -49,7 +49,7 @@
                                                     </state>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vBy-0X-dFw" userLabel="[3]TaskTextView">
-                                                    <rect key="frame" x="80" y="10" width="329" height="44"/>
+                                                    <rect key="frame" x="80" y="10" width="329" height="44.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,6 +80,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" image="arrowtriangle.backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="prevDay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wkv-Ba-j4v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnI-DC-Qnx">
                                 <rect key="frame" x="334" y="84" width="40" height="40"/>
@@ -89,6 +92,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" image="arrowtriangle.right.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextDay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CEp-xj-aTc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gue-iv-Pah">
                                 <rect key="frame" x="100" y="84" width="214" height="50"/>
@@ -131,14 +137,12 @@
                     <tabBarItem key="tabBarItem" title="Item" id="bty-2I-XOC"/>
                     <connections>
                         <outlet property="dateLabel" destination="gue-iv-Pah" id="oO2-Yz-W53"/>
-                        <outlet property="nextDay" destination="BnI-DC-Qnx" id="JNt-MV-9Nh"/>
-                        <outlet property="prevDay" destination="2Ur-dY-XQp" id="WW1-0e-RAY"/>
                         <outlet property="taskTable" destination="O6T-D4-L4l" id="cSQ-kS-cFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-875.36231884057975" y="859.82142857142856"/>
+            <point key="canvasLocation" x="-1088" y="843"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rFd-ay-DIm">

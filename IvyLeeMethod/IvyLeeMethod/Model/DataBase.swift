@@ -47,6 +47,22 @@ class Common {
         return df.string(from: date)
     }
     
+    /// 指定した日付(yyyymmdd)の前後の日付文字列を取得する
+    /// - Parameters:
+    ///   - currentDateStr: ベースの日付 (yyyymmdd)
+    ///   - changeDayNum: 変更する日数(2:明後日 1:明日 / -1:昨日)
+    /// - Returns: 変更後の日付の文字列 (yyyymmdd)
+    func getSelectDate(_ currentDateStr:String, changeDayNum:Int)->String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyyMMdd"
+        let currentDate = df.date(from: currentDateStr)
+        let modDate = Calendar.current.date(byAdding: .day, value: changeDayNum, to:currentDate!)
+        let modDateStr = df.string(from: modDate!)
+        
+        log.debugLog("currentDate[\(currentDateStr)] modDate[\(modDateStr)]")
+        return modDateStr
+    }
+    
     /// 指定した日付のRealmデータが存在するかを判定
     /// - Parameter dateStr: 日付 (ex)"20201231"
     /// - Returns: True(データあり) / False(データなし)
