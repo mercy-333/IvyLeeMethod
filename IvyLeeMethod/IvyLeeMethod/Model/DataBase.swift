@@ -71,7 +71,7 @@ class Common {
     /// 指定した日付のRealmファイルデータを取得
     /// - Parameter dateStr: 日付 (ex)"20201231"
     /// - Returns: Realmデータ
-    func getRealmData(_ dateStr:String) -> Any {
+    func readRealmData(_ dateStr:String) -> Any {
         log.debugLog("start [\(dateStr)]")
         var data = DataBase()
         
@@ -79,7 +79,7 @@ class Common {
             let realm =  try Realm()
             data = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first!
         } catch {
-            log.errorLog("get RealmData failed.")
+            log.errorLog("read RealmData failed.")
         }
         return data
     }
@@ -97,6 +97,46 @@ class Common {
             }
         } catch {
             log.errorLog("create RealmData failed.")
+        }
+    }
+    
+    /// タスク内容をRealmデータに書き込む
+    /// - Parameters:
+    ///   - dateStr: 日付 (ex)"20201231"
+    ///   - taskNum: タスク番号
+    ///   - text: タスク内容
+    func writeRealmTask(_ dateStr:String,_ taskNum:Int,_ text:String) {
+        log.debugLog("start. Date[\(dateStr)],TaskNum[\(taskNum)],Text[\(text)]")
+        
+        if ( 8 != dateStr.utf16.count) {
+            log.errorLog("invalid date.")
+        } else if (taskNum < 0 || 6 < taskNum) {
+            log.errorLog("invalid task number.")
+        }
+        
+        do {
+            let realm =  try Realm()
+            let results = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first
+            try! realm.write {
+                switch taskNum {
+                    case 1:
+                        results?.task1 = text
+                    case 2:
+                        results?.task2 = text
+                    case 3:
+                        results?.task3 = text
+                    case 4:
+                        results?.task4 = text
+                    case 5:
+                        results?.task5 = text
+                    case 6:
+                        results?.task6 = text
+                    default:
+                        log.debugLog("[\(taskNum)] is invalid.")
+                }
+            }
+        } catch {
+            log.errorLog("write RealmData failed.")
         }
     }
 }
