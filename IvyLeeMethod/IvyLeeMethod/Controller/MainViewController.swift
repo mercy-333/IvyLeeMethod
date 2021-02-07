@@ -41,10 +41,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         loadData()
     }
     
-    /// TableViewセル数 6行固定
+    /// TableViewセル数  7~10個目はダミー
     /// - Returns: 行数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 10
     }
     
     /// TableViewセル高さ
@@ -61,6 +61,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルの取得(再利用)
         let cell = taskTable.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath)
+        
+        // 7個目以降のセルはダミーなので非表示
+        if (indexPath.row >= 6) {
+            cell.viewWithTag(1)?.isHidden = true
+            cell.viewWithTag(2)?.isHidden = true
+            cell.viewWithTag(3)?.isHidden = true
+            return cell
+        } else {
+            cell.viewWithTag(1)?.isHidden = false
+            cell.viewWithTag(2)?.isHidden = false
+            cell.viewWithTag(3)?.isHidden = false
+        }
         
         // [1] タスク番号をラベルに設定
         let cTaskNum = cell.viewWithTag(1) as! UILabel
@@ -126,6 +138,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.endEditing(true)
     }
     
+    /// タスク内容の編集を開始したタイミングで呼び出す
+    /// TableViewのセルのスクロール位置を4/5/6個目は上にずらす
+    /// - Parameter textView:
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        let buttonPosition = textView.convert(CGPoint(), to: self.taskTable)
+        if let getIndexPath = self.taskTable.indexPathForRow(at:buttonPosition) {
+            if (getIndexPath.row > 2) {
+                let row = IndexPath(row:getIndexPath.row - 2, section:0)
+                taskTable.scrollToRow(at: row, at: .top, animated: true)
+            }
+        }
+    }
+    
     /// タスク内容が更新される度に呼び出し
     /// 行幅を動的にするため TableViewの更新を実施
     /// - Parameter textView:
@@ -149,7 +174,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let taskNum = getIndexPath.row + 1
             log.debugLog("TextView updated. Task\(taskNum) [\(text)]")
             db.writeRealmTask(currentDate, taskNum, text)
+            loadData()
         }
+        // TableViewセルのスクロール位置を一番上に戻しておく
+        taskTable.reloadData()
+        taskTable.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        log.debugLog("Task editing done.")
     }
     
     
