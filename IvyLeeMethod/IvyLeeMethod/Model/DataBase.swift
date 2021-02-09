@@ -47,6 +47,30 @@ class Common {
         return df.string(from: date)
     }
     
+    /// StringからDate型に変換
+    /// - Parameters:
+    ///   - string: 変換前の文字列 (sample) "2020/12/31 12:34:56 +09:00"
+    ///   - format: 変換するフォーマット (sample) "yyyy/MM/dd HH:mm:ss Z"
+    /// - Returns: Date型
+    func dateFromString(string: String, format: String) -> Date {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = format
+        return formatter.date(from: string)!
+    }
+
+    /// Date型からStringに変換
+    /// - Parameters:
+    ///   - string: Date情報
+    ///   - format: 変換するフォーマット (sample) "yyyy/MM/dd HH:mm:ss Z"
+    /// - Returns: String型
+    func stringFromDate(date: Date, format: String) -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
+    
     /// 指定した日付(yyyymmdd)の前後の日付文字列を取得する
     /// - Parameters:
     ///   - currentDateStr: ベースの日付 (yyyymmdd)
@@ -67,19 +91,64 @@ class Common {
     /// - Parameter dateStr: 日付 (ex)"20201231"
     /// - Returns: True(データあり) / False(データなし)
     func isRealmData(_ dateStr:String) ->Bool {
-        log.debugLog("start [\(dateStr)]")
         do {
             let realmCheck = try Realm()
             let todayRealm = realmCheck.objects(DataBase.self).filter("date == '\(dateStr)'")
             if (todayRealm.count > 0) {
-                log.debugLog("RealmData is exist.")
+                log.debugLog("[\(dateStr)] RealmData is exist.")
                 return true
             } else {
-                log.debugLog("RealmData is NOT exist.")
+                log.debugLog("[\(dateStr)] RealmData is NOT exist.")
                 return false
             }
         } catch  {
+            log.errorLog("[\(dateStr)] check RealmData failed.")
+            return false
+        }
+    }
+    
+    /// 指定した日付のRealmデータが初期状態であるかを判定
+    /// (初期状態の日はカレンダーにマークさせたくないため)
+    /// タスク内容1~6とタスク状態1~6が全て""であれば、初期状態と判定
+    /// - Parameter dateStr: 日付 (ex)"20201231"
+    /// - Returns: True(初期状態である) / False(初期状態ではない)
+    func checkRealmDataDefault(_ dateStr:String) ->Bool {
+        var dataCnt:Int = 0
+        
+        // Realmデータ内を全部チェック
+        do {
+            let realmCheck = try Realm()
+            let todayRealm = realmCheck.objects(DataBase.self).filter("date == '\(dateStr)'").first
+            guard let realm = todayRealm else {
+                log.errorLog("[] RealmData is nil.")
+                return false
+            }
+            
+            // データがあったらカウントアップ(1以上ならデータありと判断)
+            if ("" != realm.task1) {dataCnt += 1}
+            if ("" != realm.task2) {dataCnt += 1}
+            if ("" != realm.task3) {dataCnt += 1}
+            if ("" != realm.task4) {dataCnt += 1}
+            if ("" != realm.task5) {dataCnt += 1}
+            if ("" != realm.task6) {dataCnt += 1}
+            if (false != realm.taskFlg1) {dataCnt += 1}
+            if (false != realm.taskFlg2) {dataCnt += 1}
+            if (false != realm.taskFlg3) {dataCnt += 1}
+            if (false != realm.taskFlg4) {dataCnt += 1}
+            if (false != realm.taskFlg5) {dataCnt += 1}
+            if (false != realm.taskFlg6) {dataCnt += 1}
+
+        } catch  {
             log.errorLog("check RealmData failed.")
+            return false
+        }
+
+        // 判定
+        if ( 0 == dataCnt) {
+            log.debugLog("[\(dateStr)] data is default.")
+            return true
+        } else {
+            log.debugLog("[\(dateStr)] data is NOT default.")
             return false
         }
     }

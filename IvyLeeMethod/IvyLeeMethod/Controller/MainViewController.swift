@@ -19,7 +19,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     let log = Logger()
     let db  = Common()
     
-    var currentDate = "" /// 現在の日付
+    var currentDate: String = "" /// 現在の日付
     var currentTask: Array<String> = ["","","","","",""] /// 現在のタスク内容
     var currentTaskFlg: Array<Bool> = [false,false,false,false,false,false] /// 現在のタスク状態
     
