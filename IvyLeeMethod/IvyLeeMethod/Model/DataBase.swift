@@ -258,6 +258,19 @@ class Common {
                         default:
                             log.debugLog("[\(taskNum)] is invalid.")
                     }
+                    
+                    // completeFlgの判定
+                    if ( true == results?.taskFlg1 &&
+                         true == results?.taskFlg2 &&
+                         true == results?.taskFlg3 &&
+                         true == results?.taskFlg4 &&
+                         true == results?.taskFlg5 &&
+                         true == results?.taskFlg6 ) {
+                        results?.completeFlg = true
+                        log.debugLog("Task Complete!")
+                    } else {
+                        results?.completeFlg = false
+                    }
                 }
             } catch {
                 log.errorLog("write RealmData failed.")

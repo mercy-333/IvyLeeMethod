@@ -239,6 +239,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         taskTable.reloadData()
     }
     
+    /// AgMob広告をロード
     func loadAdmob() {
         let filePath = Bundle.main.path(forResource: "AdMobInfo", ofType: "plist")
         let plist = NSDictionary(contentsOfFile: filePath!)
