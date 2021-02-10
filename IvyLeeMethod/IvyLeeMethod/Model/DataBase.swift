@@ -131,12 +131,6 @@ class Common {
             if ("" != realm.task4) {dataCnt += 1}
             if ("" != realm.task5) {dataCnt += 1}
             if ("" != realm.task6) {dataCnt += 1}
-            if (false != realm.taskFlg1) {dataCnt += 1}
-            if (false != realm.taskFlg2) {dataCnt += 1}
-            if (false != realm.taskFlg3) {dataCnt += 1}
-            if (false != realm.taskFlg4) {dataCnt += 1}
-            if (false != realm.taskFlg5) {dataCnt += 1}
-            if (false != realm.taskFlg6) {dataCnt += 1}
 
         } catch  {
             log.errorLog("check RealmData failed.")

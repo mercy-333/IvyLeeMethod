@@ -24,14 +24,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="5pf-n9-TQE">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="64.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5pf-n9-TQE" id="nRn-lx-byx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-a3-hvh" userLabel="[1]NumberLabel">
-                                                    <rect key="frame" x="10" y="10" width="20" height="44.5"/>
+                                                    <rect key="frame" x="10" y="10" width="20" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="XEn-sr-9u4"/>
                                                     </constraints>
@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-qh-MOl" userLabel="[2]CheckButton">
-                                                    <rect key="frame" x="35" y="10" width="40" height="44.5"/>
+                                                    <rect key="frame" x="35" y="10" width="40" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Nmj-xV-ZYr"/>
                                                     </constraints>
@@ -49,7 +49,7 @@
                                                     </state>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vBy-0X-dFw" userLabel="[3]TaskTextView">
-                                                    <rect key="frame" x="80" y="10" width="329" height="44.5"/>
+                                                    <rect key="frame" x="80" y="10" width="329" height="44"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -131,7 +131,7 @@
                             <constraint firstItem="2Ur-dY-XQp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="uiA-hw-b2t"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Task" id="bty-2I-XOC"/>
+                    <tabBarItem key="tabBarItem" title="Task" image="list.dash" catalog="system" id="bty-2I-XOC"/>
                     <connections>
                         <outlet property="bannerView" destination="7aY-Ga-Jio" id="zOM-o7-Y8Y"/>
                         <outlet property="dateLabel" destination="gue-iv-Pah" id="oO2-Yz-W53"/>
@@ -223,7 +223,7 @@
                             <constraint firstItem="Nud-1j-bFi" firstAttribute="leading" secondItem="hd5-iB-l3J" secondAttribute="leading" id="yLa-3D-5DK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" id="jgc-4J-rhu"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="jgc-4J-rhu"/>
                     <connections>
                         <outlet property="calendar" destination="uiH-aa-pO1" id="lmW-AS-TAq"/>
                         <outlet property="taskTable" destination="Nud-1j-bFi" id="nRl-42-lEI"/>
@@ -256,7 +256,9 @@
     <resources>
         <image name="arrowtriangle.backward.fill" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

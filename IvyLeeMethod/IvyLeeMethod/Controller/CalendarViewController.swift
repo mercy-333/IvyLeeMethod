@@ -61,7 +61,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let dateStr = db.stringFromDate(date: date, format: "yyyyMMdd")
         if (db.isRealmData(dateStr)) {
-            if (db.checkRealmDataDefault(dateStr)) {
+            if (!db.checkRealmDataDefault(dateStr)) {
                 return 1
             } else {
                 return 0
