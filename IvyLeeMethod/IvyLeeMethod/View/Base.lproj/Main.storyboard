@@ -24,14 +24,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="5pf-n9-TQE">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5pf-n9-TQE" id="nRn-lx-byx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-a3-hvh" userLabel="[1]NumberLabel">
-                                                    <rect key="frame" x="10" y="10" width="20" height="44"/>
+                                                    <rect key="frame" x="10" y="10" width="20" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="XEn-sr-9u4"/>
                                                     </constraints>
@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaJ-qh-MOl" userLabel="[2]CheckButton">
-                                                    <rect key="frame" x="35" y="10" width="40" height="44"/>
+                                                    <rect key="frame" x="35" y="10" width="40" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Nmj-xV-ZYr"/>
                                                     </constraints>
@@ -49,7 +49,7 @@
                                                     </state>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vBy-0X-dFw" userLabel="[3]TaskTextView">
-                                                    <rect key="frame" x="80" y="10" width="329" height="44"/>
+                                                    <rect key="frame" x="80" y="10" width="329" height="44.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -147,7 +147,6 @@
         <!--Calendar-->
         <scene sceneID="v04-u6-f47">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tXz-tt-ze7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="py0-AS-1Rf" customClass="CalendarViewController" customModule="IvyLeeMethod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0iD-it-5GR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -180,16 +179,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUO-v9-0Vf" userLabel="[2]CheckButton">
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUO-v9-0Vf" userLabel="[2]CheckButton">
                                                     <rect key="frame" x="35" y="10" width="40" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="qtX-EA-nAs"/>
                                                     </constraints>
                                                     <state key="normal" image="circle" catalog="system">
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" scale="default" weight="thin"/>
                                                     </state>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xdf-Ie-8Hn" userLabel="[3]TaskTextVeiw">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xdf-Ie-8Hn" userLabel="[3]TaskTextVeiw">
                                                     <rect key="frame" x="80" y="10" width="329" height="44"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -232,6 +231,7 @@
                         <outlet property="taskTable" destination="Nud-1j-bFi" id="nRl-42-lEI"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXz-tt-ze7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-13.043478260869566" y="829.6875"/>
         </scene>
