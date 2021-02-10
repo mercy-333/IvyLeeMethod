@@ -105,16 +105,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admob Banner Area" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71z-2f-ik8">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-Ga-Jio" userLabel="GADBannerView" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="763" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0WF-be-w5s"/>
+                                    <constraint firstAttribute="height" constant="50" id="OXH-jh-Xra"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -124,11 +121,11 @@
                             <constraint firstItem="BnI-DC-Qnx" firstAttribute="leading" secondItem="gue-iv-Pah" secondAttribute="trailing" constant="20" id="6go-CG-pnl"/>
                             <constraint firstItem="O6T-D4-L4l" firstAttribute="top" secondItem="gue-iv-Pah" secondAttribute="bottom" constant="10" id="JA2-Az-T5e"/>
                             <constraint firstItem="BnI-DC-Qnx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="K19-6r-bvh"/>
-                            <constraint firstItem="71z-2f-ik8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Khm-Cq-Dcg"/>
-                            <constraint firstItem="71z-2f-ik8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gTY-IA-uw1"/>
+                            <constraint firstItem="7aY-Ga-Jio" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QxU-Jf-8XN"/>
+                            <constraint firstItem="7aY-Ga-Jio" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e6e-p4-LSm"/>
                             <constraint firstItem="2Ur-dY-XQp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="iR3-ml-nQs"/>
+                            <constraint firstItem="7aY-Ga-Jio" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lPF-A1-NtO"/>
                             <constraint firstItem="gue-iv-Pah" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="nr2-Cx-boo"/>
-                            <constraint firstItem="71z-2f-ik8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oxe-Pb-axY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BnI-DC-Qnx" secondAttribute="trailing" constant="40" id="qSw-Ia-gnl"/>
                             <constraint firstItem="O6T-D4-L4l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="u6C-if-cPV"/>
                             <constraint firstItem="2Ur-dY-XQp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="uiA-hw-b2t"/>
@@ -136,13 +133,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Task" id="bty-2I-XOC"/>
                     <connections>
+                        <outlet property="bannerView" destination="7aY-Ga-Jio" id="zOM-o7-Y8Y"/>
                         <outlet property="dateLabel" destination="gue-iv-Pah" id="oO2-Yz-W53"/>
                         <outlet property="taskTable" destination="O6T-D4-L4l" id="cSQ-kS-cFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088" y="843"/>
+            <point key="canvasLocation" x="-1088.4057971014493" y="842.41071428571422"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="v04-u6-f47">
@@ -267,9 +265,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var taskTable: UITableView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let log = Logger()
     let db  = Common()
@@ -29,6 +30,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         log.debugLog("#####################")
         
         super.viewDidLoad()
+        loadAdmob()
+        
         taskTable.delegate = self
         taskTable.dataSource = self
         taskTable.rowHeight = UITableView.automaticDimension
@@ -234,6 +237,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             db.createRealmData(currentDate)
         }
         taskTable.reloadData()
+    }
+    
+    func loadAdmob() {
+        let filePath = Bundle.main.path(forResource: "AdMobInfo", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile: filePath!)
+        //bannerView.adUnitID = plist!["adUnitID_banner1"] as? String
+        bannerView.adUnitID = plist!["adUnitID_TEST"] as? String
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        log.debugLog("Admob loaded.")
     }
     
 }
