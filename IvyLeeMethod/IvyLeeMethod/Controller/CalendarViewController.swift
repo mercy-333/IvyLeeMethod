@@ -53,6 +53,25 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.reloadData()
     }
     
+    /// カレンダーにイメージを表示
+    /// * completeFlg=True の時、王冠を表示
+    /// - Parameters:
+    ///   - calendar:
+    ///   - date:
+    /// - Returns: 表示画像
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        let dateStr = db.stringFromDate(date: date, format: "yyyyMMdd")
+        
+        if (db.isRealmData(dateStr)) {
+            let data:DataBase = db.readRealmData(dateStr) as! DataBase
+            // 王冠を表示
+            if (data.completeFlg) {
+                return UIImage(systemName: "crown.fill")
+            }
+        }
+        return nil
+    }
+    
     /// カレンダーにドットをつける
     /// - Parameters:
     ///   - calendar:

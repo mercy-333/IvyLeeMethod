@@ -156,10 +156,14 @@ class Common {
         
         do {
             let realm =  try Realm()
-            data = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first!
+            let count = realm.objects(DataBase.self).filter("date == '\(dateStr)'").count
+            if (count > 0) {
+                data = realm.objects(DataBase.self).filter("date == '\(dateStr)'").first!
+            }
         } catch {
             log.errorLog("read RealmData failed.")
         }
+        
         return data
     }
     
